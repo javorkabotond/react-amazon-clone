@@ -11,13 +11,16 @@
   background-color: white;
   z-index: 1;
 }
+
 .product_info {
   height: 100px;
   margin-bottom: 15px;
 }
+
 .product_price {
   margin-top: 5px;
 }
+
 .product_rating {
   display: flex;
 }
@@ -28,6 +31,7 @@
   object-fit: contain;
   margin-bottom: 15px;
 }
+
 .product > button {
   background-color: #f0c14b;
   border: 1px solid;

@@ -1,7 +1,7 @@
 import React from 'react'
 import banner from '../images/banner.jpg'
-import './Home.css';
-import Product from './Product';
+import './Home.css'
+import Product from './Product'
 
 function Home() {
   return (

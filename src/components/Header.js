@@ -1,10 +1,10 @@
-import React from 'react';
-import logo from '../images/amazon_PNG11.png';
-import './Header.css';
-import { Link } from 'react-router-dom';
-import SearchIcon from '@material-ui/icons/Search';
+import React from 'react'
+import logo from '../images/amazon_PNG11.png'
+import './Header.css'
+import { Link } from 'react-router-dom'
+import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
-import { useStateValue } from '../StateProvider';
+import { useStateValue } from '../StateProvider'
 
 function Header() {
   const [{ basket }] = useStateValue();
