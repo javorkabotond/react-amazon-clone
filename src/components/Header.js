@@ -1,16 +1,18 @@
 import React from 'react'
 import logo from '../images/amazon_PNG11.png'
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import { useStateValue } from '../StateProvider'
 import { auth } from '../firebase'
 
+
+
 function Header() {
   const [{ basket, user }] = useStateValue();
 
-  const login = () => {
+  const handleAuthentication = () => {
     if(user) {
       auth.signOut();
     }
@@ -28,11 +30,13 @@ function Header() {
         <input type="text" className="header_searchInput"/>
         <SearchIcon className="header_searchIcon"/>
       </div>
-
       <div className="header_nav">
-        <Link to={!user && "/login"} className="header_link">
-          <div onClick={login} className="header_option">
-            <span className="header_optionLineOne">Hello: {user?.email}</span>
+      {/*
+        to={!user  && '/login'}
+      */}
+        <Link to={"/login"} className="header_link">
+          <div onClick={handleAuthentication} className="header_option">
+            <span className="header_optionLineOne">Hello: {!user ? 'Guest' : user.email}</span>
             <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
           </div>
         </Link>
